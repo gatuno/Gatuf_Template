@@ -1,0 +1,7 @@
+{extends 'APP_LOWER/base.html'}
+{block body}
+{if $user->administrator}
+<p><a href="{url 'APP_CAMEL_CASE_Views_Users::agregar'}"><img class="icon" src="{media '/img/list-add.png'}" alt="{trans 'Add user'}" />{trans 'Add new user'}</a></p>
+{/if}
+{$paginador.render}
+{/block}

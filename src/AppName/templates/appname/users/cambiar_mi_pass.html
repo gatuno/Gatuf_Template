@@ -1,0 +1,16 @@
+{extends 'APP_LOWER/base.html'}
+{block body}
+{if $form.errors}
+<div class="errors">
+	<p>{trans 'The form has errors:'}</p>
+</div>
+{/if}
+<form method="post" action=".">
+	<table>
+	{$form.render_table}
+		<tr>
+			<td>&nbsp;</td><td><input type="submit" name="submit" value="{trans 'Change my password'}" /></td>
+		</tr>
+	</table>
+</form>
+{/block}

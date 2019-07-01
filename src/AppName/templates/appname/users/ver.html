@@ -1,0 +1,13 @@
+{extends 'APP_LOWER/base.html'}
+{block body}
+<p>TODO: Desplegar aquí los detalles del usuario aquí.</p>
+<p><a href="{url 'APP_CAMEL_CASE_Views_Users::actualizar', array ($c_user->id)}">{trans 'Update user info'}</a></p>
+{if $user->id == $c_user->id}
+<p><a href="{url 'APP_CAMEL_CASE_Views_Users::cambiar_pass'}">{trans 'Change my password'}</a></p>
+{else}
+<p><a href="{url 'APP_CAMEL_CASE_Views_Users::reset_pass', array ($c_user->id)}">{trans 'Reset user password'}</a></p>
+{/if}
+{assign $name = $c_user->first_name~' '~$c_user->last_name}{assign $login = $c_user->login}
+<p>{blocktrans}Full Name: {$name}{/blocktrans}</p>
+<p>{blocktrans}Login: {$login}{/blocktrans}</p>
+{/block}
