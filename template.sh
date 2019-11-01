@@ -18,6 +18,7 @@ git init
 
 sed -i "s/APP_CAMEL_CASE/${NAME_CAMEL_CASE}/g" www/index.php
 sed -i "s/APP_LOWER/${NAME_LOWER}/g" www/index.php
+sed -i "s/APP_UPPER/${NAME_UPPER}/g" www/index.php
 
 # Inicializar Gatuf como submodulo git
 git submodule add https://github.com/gatuno/Gatuf.git src/Gatuf
@@ -52,6 +53,7 @@ cd conf
 
 sed -i "s/APP_CAMEL_CASE/${NAME_CAMEL_CASE}/g" appname.php
 sed -i "s/APP_LOWER/${NAME_LOWER}/g" appname.php
+sed -i "s/APP_UPPER/${NAME_UPPER}/g" appname.php
 
 mv appname.php ${NAME_LOWER}.php.dist
 
@@ -78,6 +80,7 @@ cd templates
 
 sed -i "s/APP_CAMEL_CASE/${NAME_CAMEL_CASE}/g" appname/base.html
 sed -i "s/APP_CAMEL_CASE/${NAME_CAMEL_CASE}/g" appname/index.html
+sed -i "s/APP_LOWER/${NAME_LOWER}/g" appname/index.html
 
 cd appname/login
 for g in `ls`; do
@@ -88,6 +91,14 @@ done
 cd ../..
 
 cd appname/users
+for g in `ls`; do
+	sed -i "s/APP_UPPER/${NAME_UPPER}/g" $g
+	sed -i "s/APP_CAMEL_CASE/${NAME_CAMEL_CASE}/g" $g
+	sed -i "s/APP_LOWER/${NAME_LOWER}/g" $g
+done
+cd ../..
+
+cd appname/register
 for g in `ls`; do
 	sed -i "s/APP_UPPER/${NAME_UPPER}/g" $g
 	sed -i "s/APP_CAMEL_CASE/${NAME_CAMEL_CASE}/g" $g

@@ -69,7 +69,7 @@ class APP_CAMEL_CASE_Views_Register {
 				$user->last_login = gmdate('Y-m-d H:i:s');
 				$user->update();
 				$request->user->setMessage(1, __('Welcome!'));
-				$url = Gatuf_HTTP_URL_urlForView('APP_CAMEL_CASE_Views::index');
+				$url = Gatuf_HTTP_URL_urlForView('APP_CAMEL_CASE_Views_Index::index');
 				return new Gatuf_HTTP_Response_Redirect($url);
 			}
 		} else {

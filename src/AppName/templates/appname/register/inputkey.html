@@ -1,0 +1,34 @@
+{extends 'APP_LOWER/base.html'}
+{block body}
+{if $form.errors}
+<div class="px-message-error">
+<p>{trans 'Oops, we found an error in the form.'}</p>
+{if $form.get_top_errors}
+{$form.render_top_errors|unsafe}
+{/if}
+</div>
+{/if}
+
+<form method="post" action=".">
+<table class="form" summary="">
+<tr>
+<td>&nbsp;</td>
+<td><strong>{$form.f.key.labelTag}:</strong><br />
+{if $form.f.key.errors}{$form.f.key.fieldErrors}{/if}
+{$form.f.key|unsafe}
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><input type="submit" value="{trans 'Confirm Your Account'}" name="submit" /> | <a href="{url 'APP_CAMEL_CASE_Views_Index::index'}">{trans 'Cancel'}</a>
+</td>
+</tr>
+</table>
+</form>
+{/block}
+{block javascript}<script type="text/javascript">
+document.getElementById('id_key').focus()
+</script>
+{/block}
+
+
