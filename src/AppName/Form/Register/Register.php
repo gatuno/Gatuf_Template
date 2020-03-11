@@ -141,7 +141,7 @@ class APP_CAMEL_CASE_Form_Register_Register extends Gatuf_Form {
 		$tmpl = new Gatuf_Template('APP_LOWER/register/confirmation-email.txt');
 		$text_email = $tmpl->render($context);
 		$email = new Gatuf_Mail($from_email, $user->email,
-							   __('Site - Confirm your account');
+							   __('Site - Confirm your account'));
 		$email->addTextMessage($text_email);
 		$email->sendMail();
 	}

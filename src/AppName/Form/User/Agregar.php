@@ -109,7 +109,7 @@ class APP_CAMEL_CASE_Form_User_Agregar extends Gatuf_Form {
 		$user->email = $this->cleaned_data['email'];
 		$user->language = $this->cleaned_data['language'];
 		$user->setPassword ($this->cleaned_data['password']);
-		$user->administrator = true;
+		$user->administrator = false;
 		
 		if ($commit) {
 			$user->create ();

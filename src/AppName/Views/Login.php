@@ -122,7 +122,7 @@ class APP_CAMEL_CASE_Views_Login {
 				$user->update ();
 				// Establecer un mensaje
 				$request->user->setMessage(1, __('Welcome back! Next time, you can use your broswer options to remember the password.'));
-				$url = Gatuf_HTTP_URL_urlForView ('APP_CAMEL_CASE_Views::index');
+				$url = Gatuf_HTTP_URL_urlForView ('APP_CAMEL_CASE_Views_Index::index');
 				return new Gatuf_HTTP_Response_Redirect ($url);
 			}
 		} else {
